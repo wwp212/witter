@@ -1,0 +1,11 @@
+<%provide(:title, 'Home') %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Micro | <%= yield(:title) %></title>
+  </head>
+  <body>
+    <h1>Wyatt's Microblog</h1>
+    <p>This is the home page. Crazy</p>
+  </body>
+</html>
