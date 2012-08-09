@@ -1,5 +1,29 @@
-<div class="center hero-unit">
-  <h1>Wyatt's Microblog</h1>
-  <p>This is the home page. Crazy</p>
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
-</div>
+<% if signed_in? %>
+  <div class="row">
+    <aside class="span4">
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+    <div class="span8">
+      <h3>Micropost Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+  </div>  
+<% else %>
+  <div class="center hero-unit">
+    <h1>Welcome to Witter</h1>
+
+    <h2>
+      This is Wyatt's version of twitter and it is amazing
+    </h2>
+
+    <%= link_to "Sign up now!", signup_path, 
+                                class: "btn btn-large btn-primary" %>
+  </div>
+
+<% end %>
